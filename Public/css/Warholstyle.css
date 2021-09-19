@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  grid-template-rows: 3fr 8fr 2fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 700px 150px;
+  grid-template-areas:
+    "barra-de-usuario"
+    "logo"
+    "nav";
+  align-items: center;
+}
+
+.barra-de-usuario {
+  grid-area: barra-de-usuario;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+  background-color: black;
+}
+.user {
+  display: grid;
+  text-align: right;
+}
+.user ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.user ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.user img {
+  height: 40px;
+}
+
+.personalizar a {
+  text-decoration: none;
+  font-family: "Bebas Neue", cursive;
+}
+
+.logo {
+  display: grid;
+  grid-area: logo;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+h3 {
+  color: white;
+  font-size: 40px;
+  transition-property: font-size;
+  transition-duration: 1s;
+}
+
+h3:hover {
+  font-size: 35px;
+}
+nav {
+  grid-area: nav;
+}
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(4, 262px);
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+nav ul li a {
+  text-decoration-line: underline;
+  text-decoration-color: #fcd4eb;
+  transition-property: font-size;
+  transition-duration: 1s;
+  font-family: "Bebas Neue", cursive;
+  color: white;
+  font-size: 50px;
+  justify-items: center;
+}
+
+nav ul li a:hover {
+  font-size: 40px;
+}
+
+nav ul li {
+  display: grid;
+  justify-items: center;
+}
+
+main {
+  padding-top: 200px;
+  display: grid;
+  grid-template-rows: 120px 350px 120px 350px 120px 350px 120px 350px;
+  padding-right: 90px;
+  padding-left: 90px;
+  padding-bottom: 100px;
+}
+
+h1 {
+  padding-top: 10px;
+  text-align: center;
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  font-size: 80px;
+  display: grid;
+}
+
+main div {
+  background-color: white;
+  display: flex;
+  overflow-x: auto;
+}
+.wrhl-tarjeta {
+  padding: 10px;
+  background-color: rgb(15, 15, 15);
+  border-radius: 10px;
+  min-width: 250px;
+  margin: 10px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+h4 {
+  font-size: 13px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+h5 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.img-tarjeta {
+  height: 230px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: rgb(22, 22, 22);
+  padding-left: 20px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: "logo-footer info redes";
+}
+
+.logo-footer img {
+  grid-area: logo-footer;
+  height: 100px;
+}
+
+.items-info {
+  grid-area: info;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+h6 {
+  color: white;
+  font-size: 2rem;
+}
+
+.items-info div p {
+  color: white;
+}
+
+.redes {
+  grid-area: redes;
+  display: grid;
+  justify-items: end left;
+  align-items: flex-end;
+}
+
+.redes ul li {
+  display: inline-block;
+}
+.redes img {
+  height: 50px;
+}
+
+@media (max-width: 900px) {
+  header {
+    grid-template-rows: 100px 500px 200px;
+  }
+  .personalizar {
+    font-size: 40px;
+  }
+
+  .barra-de-usuario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  nav ul {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "buzos"
+      "remeras"
+      "gorros"
+      "gorras";
+    justify-items: center;
+  }
+  .logo img {
+    height: 300px;
+    width: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  main {
+    padding-top: 50px;
+  }
+  footer .items-info {
+    display: none;
+  }
+  .redes {
+    padding-right: 20px;
+  }
+}
